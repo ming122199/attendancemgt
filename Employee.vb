@@ -3,25 +3,16 @@
 
 
 Public Class Form1
-    Private id As Integer
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         checkDatabaseConnection()
-
         prcDisplayEmployee()
 
     End Sub
 
 
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-
-
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Dim oForm As New adminDashboard
@@ -38,6 +29,8 @@ Public Class Form1
 
         End With
         prcDisplayEmployee()
+
+
 
 
     End Sub
@@ -65,18 +58,18 @@ Public Class Form1
                     While Not dataAttendance.Rows.Count - 1 < row
                         With DataGridView1
                             .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
-                            .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("dept_id").ToString
+                            .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("emp_ID").ToString
+                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("dept_id").ToString
 
-                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("f_name").ToString
-                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("l_name").ToString
-                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("address").ToString
+                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("f_name").ToString
+                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("l_name").ToString
+                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("address").ToString
 
-                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("birthdate").ToString
-                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("gender").ToString
+                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("birthdate").ToString
+                            .Rows(row).Cells(7).Value = dataAttendance.Rows(row).Item("gender").ToString
 
-                            .Rows(row).Cells(7).Value = dataAttendance.Rows(row).Item("date_hired").ToString
-                            .Rows(row).Cells(8).Value = dataAttendance.Rows(row).Item("contactno").ToString
-
+                            .Rows(row).Cells(8).Value = dataAttendance.Rows(row).Item("date_hired").ToString
+                            .Rows(row).Cells(9).Value = dataAttendance.Rows(row).Item("contactno").ToString
 
                         End With
                         row = row + 1
@@ -97,10 +90,7 @@ Public Class Form1
     End Sub
 
 
-    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
-
-    End Sub
 
     Private Sub btnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
         Dim num As Integer
@@ -127,37 +117,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
 
-        With addEmployee
-            IntOperation = 1
-            id = CInt(DataGridView1.CurrentRow.Cells(0).Value.ToString)
-
-            .txtID.Text = DataGridView1.CurrentRow.Cells(0).Value
-
-            .cmbDept.Text = DataGridView1.CurrentRow.Cells(1).Value
-            .txtFname.Text = DataGridView1.CurrentRow.Cells(2).Value
-            .txtLname.Text = DataGridView1.CurrentRow.Cells(3).Value
-            .txtAddress.Text = DataGridView1.CurrentRow.Cells(4).Value
-            .bdate.Value = DataGridView1.CurrentRow.Cells(5).Value
-
-            .cmbGender.Text = DataGridView1.CurrentRow.Cells(6).Value
-            .dhired.Value = DataGridView1.CurrentRow.Cells(7).Value
-
-
-            .txtContact.Text = DataGridView1.CurrentRow.Cells(8).Value
-            .ShowDialog()
-
-
-
-
-
-
-
-        End With
-        prcDisplayEmployee()
-
-    End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         prcDisplayBySearchType(txtSearch.Text)
@@ -200,19 +160,20 @@ Public Class Form1
                     row = 0
                     While Not dataAttendance.Rows.Count - 1 < row
                         With DataGridView1
-
                             .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
-                            .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("dept_id").ToString
 
-                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("f_name").ToString
-                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("l_name").ToString
-                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("address").ToString
+                            .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("emp_ID").ToString
+                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("dept_id").ToString
 
-                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("birthdate").ToString
-                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("gender").ToString
+                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("f_name").ToString
+                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("l_name").ToString
+                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("address").ToString
 
-                            .Rows(row).Cells(7).Value = dataAttendance.Rows(row).Item("date_hired").ToString
-                            .Rows(row).Cells(8).Value = dataAttendance.Rows(row).Item("contactno").ToString
+                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("birthdate").ToString
+                            .Rows(row).Cells(7).Value = dataAttendance.Rows(row).Item("gender").ToString
+
+                            .Rows(row).Cells(8).Value = dataAttendance.Rows(row).Item("date_hired").ToString
+                            .Rows(row).Cells(9).Value = dataAttendance.Rows(row).Item("contactno").ToString
 
                         End With
 
@@ -266,17 +227,19 @@ Public Class Form1
                     While Not dataAttendance.Rows.Count - 1 < row
                         With DataGridView1
                             .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
-                            .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("dept_id").ToString
 
-                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("f_name").ToString
-                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("l_name").ToString
-                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("address").ToString
+                            .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("emp_ID").ToString
+                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("dept_id").ToString
 
-                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("birthdate").ToString
-                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("gender").ToString
+                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("f_name").ToString
+                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("l_name").ToString
+                            .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("address").ToString
 
-                            .Rows(row).Cells(7).Value = dataAttendance.Rows(row).Item("date_hired").ToString
-                            .Rows(row).Cells(8).Value = dataAttendance.Rows(row).Item("contactno").ToString
+                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("birthdate").ToString
+                            .Rows(row).Cells(7).Value = dataAttendance.Rows(row).Item("gender").ToString
+
+                            .Rows(row).Cells(8).Value = dataAttendance.Rows(row).Item("date_hired").ToString
+                            .Rows(row).Cells(9).Value = dataAttendance.Rows(row).Item("contactno").ToString
 
                         End With
 
@@ -319,60 +282,38 @@ Public Class Form1
 
     End Sub
 
-    Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
 
 
         With addEmployee
+
             IntOperation = 1
 
-
             id = CInt(DataGridView1.CurrentRow.Cells(0).Value.ToString)
-            .txtID.Text = DataGridView1.CurrentRow.Cells(0).Value.ToString
-            .txtFname.Text = DataGridView1.CurrentRow.Cells(1).Value.ToString
-            .txtLname.Text = DataGridView1.CurrentRow.Cells(2).Value.ToString
-            .txtAddress.Text = DataGridView1.CurrentRow.Cells(3).Value.ToString
-            .bdate.Value = DataGridView1.CurrentRow.Cells(4).Value.ToString
-            .dhired.Value = DataGridView1.CurrentRow.Cells(5).Value.ToString
-            .cmbGender.Text = DataGridView1.CurrentRow.Cells(6).Value.ToString
-            .cmbDept.Text = DataGridView1.CurrentRow.Cells(7).Value.ToString
-            .txtContact.Text = DataGridView1.CurrentRow.Cells(8).Value.ToString
+            .txtID.Text = DataGridView1.CurrentRow.Cells(1).Value
+            .cmbDept.Text = DataGridView1.CurrentRow.Cells(2).Value
+            .txtFname.Text = DataGridView1.CurrentRow.Cells(3).Value
+            .txtLname.Text = DataGridView1.CurrentRow.Cells(4).Value
+            .txtAddress.Text = DataGridView1.CurrentRow.Cells(5).Value
+            .bdate.Value = DataGridView1.CurrentRow.Cells(6).Value
+            .cmbGender.Text = DataGridView1.CurrentRow.Cells(7).Value
+            .dhired.Value = DataGridView1.CurrentRow.Cells(8).Value
+
+            .txtContact.Text = DataGridView1.CurrentRow.Cells(9).Value
             .ShowDialog()
 
-
-
-
         End With
+
+
         prcDisplayEmployee()
 
+
+
     End Sub
+
 
     Private Sub DataGridView1_RowHeaderMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView1.RowHeaderMouseDoubleClick
-        Dim dr As DataGridViewRow = DataGridView1.SelectedRows(0)
 
-        With addEmployee
-
-            id = CInt(DataGridView1.CurrentRow.Cells(0).Value.ToString)
-
-            .cmbDept.Text = DataGridView1.CurrentRow.Cells(1).Value.ToString
-            .txtFname.Text = DataGridView1.CurrentRow.Cells(2).Value.ToString
-            .txtLname.Text = DataGridView1.CurrentRow.Cells(3).Value.ToString
-            .txtAddress.Text = DataGridView1.CurrentRow.Cells(4).Value.ToString
-            .bdate.Value = DataGridView1.CurrentRow.Cells(5).Value.ToString
-
-            .cmbGender.Text = DataGridView1.CurrentRow.Cells(6).Value.ToString
-            .dhired.Value = DataGridView1.CurrentRow.Cells(7).Value.ToString
-
-
-            .txtContact.Text = DataGridView1.CurrentRow.Cells(8).Value.ToString
-            .ShowDialog()
-
-
-        End With
-        prcDisplayEmployee()
-
-    End Sub
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
     End Sub
 End Class

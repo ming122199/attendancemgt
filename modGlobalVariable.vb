@@ -12,6 +12,7 @@ Module modGlobalVariable
     Public sqlAttendanceAdapter As New MySqlDataAdapter
     Public row As Integer
     Public IntOperation As Integer
+    Public id As Integer
 
 End Module
 
