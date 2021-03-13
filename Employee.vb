@@ -15,25 +15,15 @@ Public Class Form1
 
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Dim oForm As New adminDashboard
-
-        oForm.Show()
+        adminDashboard.Show()
         Me.Hide()
 
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        With addEmployee
-            .ShowDialog()
-            IntOperation = 0
-
-        End With
-        prcDisplayEmployee()
-
 
 
 
     End Sub
+
+
 
     Private Sub prcDisplayEmployee()
 
@@ -300,7 +290,12 @@ Public Class Form1
             .dhired.Value = DataGridView1.CurrentRow.Cells(8).Value
 
             .txtContact.Text = DataGridView1.CurrentRow.Cells(9).Value
+
+
             .ShowDialog()
+
+
+
 
         End With
 
@@ -314,6 +309,28 @@ Public Class Form1
 
     Private Sub DataGridView1_RowHeaderMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView1.RowHeaderMouseDoubleClick
 
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+
+        With addEmployee
+            .ShowDialog()
+            IntOperation = 0
+
+        End With
+        prcDisplayEmployee()
+
+
+
+
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
 
     End Sub
 End Class

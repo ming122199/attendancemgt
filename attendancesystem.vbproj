@@ -110,10 +110,10 @@
     <Compile Include="addEmployee.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="adminDashboard.Designer.vb">
-      <DependentUpon>adminDashboard.vb</DependentUpon>
+    <Compile Include="addUser.Designer.vb">
+      <DependentUpon>addUser.vb</DependentUpon>
     </Compile>
-    <Compile Include="adminDashboard.vb">
+    <Compile Include="addUser.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="attendance.Designer.vb">
@@ -129,6 +129,16 @@
       <DependentUpon>Employee.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EmpTimesheet.Designer.vb">
+      <DependentUpon>EmpTimesheet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmpTimesheet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.vb" />
     <Compile Include="login.Designer.vb">
       <DependentUpon>login.vb</DependentUpon>
     </Compile>
@@ -163,14 +173,20 @@
     <EmbeddedResource Include="addEmployee.resx">
       <DependentUpon>addEmployee.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="adminDashboard.resx">
-      <DependentUpon>adminDashboard.vb</DependentUpon>
+    <EmbeddedResource Include="addUser.resx">
+      <DependentUpon>addUser.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="attendance.resx">
       <DependentUpon>attendance.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpTimesheet.resx">
+      <DependentUpon>EmpTimesheet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.vb</DependentUpon>
